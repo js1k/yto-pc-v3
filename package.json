@@ -1,19 +1,22 @@
 {
-  "name": "yto-pc-v3",
-  "version": "0.1.0",
-  "private": true,
+  "name": "yto-pc-v32",
+  "main": "dist/yto-pc-v3.js",
+  "description": "yto pc components vue3.0 version",
+  "version": "1.0.0",
+  "author": "bww",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "build": "rollup -c"
   },
   "dependencies": {
     "core-js": "^3.6.5",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "element-plus": "^1.0.1-beta.27",
+    "vue": "^3.0.0"
   },
   "devDependencies": {
+    "rollup-plugin-esbuild": "^2.6.1",
     "@types/chai": "^4.2.11",
     "@types/mocha": "^5.2.4",
     "@typescript-eslint/eslint-plugin": "^2.33.0",
@@ -39,14 +42,5 @@
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3"
-  },
-  "gitHooks": {
-    "pre-commit": "lint-staged"
-  },
-  "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
-      "git add"
-    ]
   }
 }
