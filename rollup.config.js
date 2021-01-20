@@ -2,6 +2,7 @@ import esbuild from 'rollup-plugin-esbuild' // plugin-esbuild将ts变为js
 import vue from 'rollup-plugin-vue' // plugin-vue将vue结尾的文件变为js
 import scss from 'rollup-plugin-scss' // plugin-scss将scss结尾的变为js
 import dartSass from 'sass'; // 用于支持插件
+import resolve from 'rollup-plugin-node-resolve'
 import { terser } from "rollup-plugin-terser" // 变丑别人看不懂（压缩后的）
 
 export default {
@@ -14,7 +15,7 @@ export default {
         name: 'yto-pc-v3', // 仓库或组件的名字
         file: 'dist/yto-pc-v3.js', // 我们要生成的文件目录（css是自动创建）
         format: 'umd', // 文件输出格式为UMD，一个统一的模块定义器
-        plugins: [terser()] // 插件，（js的丑化，即打包后，不容易阅读的压缩后的文件）； 如果去掉terser()，得到的js代码即为容易阅读的
+        plugins: [terser(),resolve()] // 插件，（js的丑化，即打包后，不容易阅读的压缩后的文件）； 如果去掉terser()，得到的js代码即为容易阅读的
     },
     plugins: [
         scss({ include: /\.scss$/, sass: dartSass }), // 对所有样式文件进行编译
