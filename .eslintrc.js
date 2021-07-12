@@ -17,7 +17,7 @@ module.exports = {
     indent: ["error", 4, { SwitchCase: 1 }],
     semi: ["error", "always"],
     curly: "off",
-    "standard/computed-property-even-spacing": false,
+    "standard/computed-property-even-spacing": 0,
     "no-return-assign": "off",
     "one-var": "off",
     "space-before-function-paren": 0,
