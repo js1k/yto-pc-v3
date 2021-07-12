@@ -8,7 +8,7 @@
     "private": false,
     "scripts": {
         "dev": "vue-cli-service serve",
-        "build": "rollup -c",
+        "build": "rollup build rollup.config.js",
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
